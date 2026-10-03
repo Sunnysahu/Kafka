@@ -1,1 +1,11 @@
-<Solution />
+<Solution>
+  <Folder Name="/Kafka/">
+    <File Path="docker-compose.yml" />
+    <File Path="Readme.md" />
+  </Folder>
+  <Project Path="DeliveryService/DeliveryService.csproj" />
+  <Project Path="NotificationService/NotificationService.csproj" />
+  <Project Path="Shared/Shared.csproj" />
+  <Project Path="ShipmentPlatform/ShipmentService.csproj" />
+  <Project Path="TrackingService/TrackingService.csproj" />
+</Solution>
