@@ -3,6 +3,7 @@
     <File Path="docker-compose.yml" />
     <File Path="Readme.md" />
   </Folder>
+  <Folder Name="/Kafka/Producers/" />
   <Project Path="DeliveryService/DeliveryService.csproj" />
   <Project Path="NotificationService/NotificationService.csproj" />
   <Project Path="Shared/Shared.csproj" />
