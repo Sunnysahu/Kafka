@@ -2,6 +2,8 @@
 
 public class ShipmentCreatedEvent
 {
+    public Guid EventId { get; set; }
+
     public int ShipmentId { get; set; }
 
     public string CustomerName { get; set; } = string.Empty;

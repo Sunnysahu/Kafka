@@ -20,6 +20,7 @@ public class ShipmentsController : ControllerBase
 
         var shipmentEvent = new ShipmentCreatedEvent
         {
+            EventId = Guid.NewGuid(),   
             ShipmentId = shipmentId,
             CustomerName = "Sunny",
             Origin = "Jamshedpur",
