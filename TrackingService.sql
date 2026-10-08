@@ -14,5 +14,13 @@ CREATE TABLE ShipmentTracking
 );
 GO
 
+CREATE TABLE ProcessedEvents
+(
+    EventId UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    ProcessedAt DATETIME2 NOT NULL
+);
+GO
+
 
 SELECT * FROM ShipmentTracking;
+SELECT * FROM ProcessedEvents;
