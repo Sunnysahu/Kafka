@@ -15,7 +15,8 @@ public class ShipmentsController : ControllerBase
     [HttpPost("test-event")]
     public async Task<IActionResult> PublishTestEvent(CancellationToken cancellationToken)
     {
-        var shipmentId = Random.Shared.Next(1000, 9999);
+        //var shipmentId = Random.Shared.Next(1000, 9999);
+        var shipmentId = 7002;
 
         var shipmentEvent = new ShipmentCreatedEvent
         {
