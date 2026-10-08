@@ -22,7 +22,7 @@ public class ShipmentEventConsumer : BackgroundService
             BootstrapServers = _configuration["Kafka:BootstrapServers"],
             GroupId = _configuration["Kafka:ConsumerGroup"],
             AutoOffsetReset = AutoOffsetReset.Earliest,
-            EnableAutoCommit = true
+            EnableAutoCommit = false
         };
 
         using var consumer = new ConsumerBuilder<string, string>(config).Build();
@@ -45,11 +45,13 @@ public class ShipmentEventConsumer : BackgroundService
                 if (shipmentEvent == null) continue;
 
                 _logger.LogInformation(
-                    "Received ShipmentCreated event. " +
-                    "ShipmentId: {ShipmentId}, Partition: {Partition}, Offset: {Offset}",
+                    "Received ShipmentCreated event. " + "ShipmentId: {ShipmentId}, Partition: {Partition}, Offset: {Offset}",
                     shipmentEvent.ShipmentId,
                     result.Partition,
-                    result.Offset);
+                    result.Offset
+                );
+
+                consumer.Commit(result);
             }
         }
         catch (OperationCanceledException)
