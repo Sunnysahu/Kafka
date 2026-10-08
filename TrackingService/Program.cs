@@ -1,10 +1,15 @@
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using TrackingService.Data;
 using TrackingService.Kafka.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<TrackingDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TrackingDb")));
 
 builder.Services.AddHostedService<ShipmentEventConsumer>();
 

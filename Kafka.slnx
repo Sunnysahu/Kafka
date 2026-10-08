@@ -4,6 +4,9 @@
     <File Path="Readme.md" />
   </Folder>
   <Folder Name="/Kafka/Producers/" />
+  <Folder Name="/Sql/">
+    <File Path="TrackingService.sql" />
+  </Folder>
   <Project Path="DeliveryService/DeliveryService.csproj" />
   <Project Path="NotificationService/NotificationService.csproj" />
   <Project Path="Shared/Shared.csproj" />

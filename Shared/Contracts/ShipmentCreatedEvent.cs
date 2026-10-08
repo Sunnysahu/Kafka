@@ -10,5 +10,5 @@ public class ShipmentCreatedEvent
 
     public string Destination { get; set; } = string.Empty;
 
-    public DateTime CreatedAtUtc { get; set; }
+    public DateTime CreatedAt { get; set; }
 }

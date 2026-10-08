@@ -16,7 +16,7 @@ public class ShipmentsController : ControllerBase
     public async Task<IActionResult> PublishTestEvent(CancellationToken cancellationToken)
     {
         //var shipmentId = Random.Shared.Next(1000, 9999);
-        var shipmentId = 7002;
+        var shipmentId = 1234;
 
         var shipmentEvent = new ShipmentCreatedEvent
         {
@@ -24,7 +24,7 @@ public class ShipmentsController : ControllerBase
             CustomerName = "Sunny",
             Origin = "Jamshedpur",
             Destination = "Delhi",
-            CreatedAtUtc = DateTime.Now
+            CreatedAt = DateTime.Now
         };
 
         await _kafkaProducer.PublishAsync(shipmentId.ToString(), shipmentEvent, cancellationToken);
